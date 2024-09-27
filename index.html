@@ -6,14 +6,25 @@
     <title>Mi Sitio de Pruebas</title>
     
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D2ZDL2VC7H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2ZDL2VC7H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        gtag('config', 'G-D2ZDL2VC7H');  <!-- Aquí va tu Measurement ID de Google Analytics -->
-    </script>
+  gtag('config', 'G-D2ZDL2VC7H', {
+    'send_page_view': true,
+    'user_id': '123456789.987654321'  <!-- Opcional: Puedes enviar tu propio user_id si ya tienes uno -->
+  });
+
+  // Obtener el client_id
+  gtag('get', 'G-D2ZDL2VC7H', 'client_id', (clientId) => {
+    console.log('Client ID:', clientId);
+    // Aquí puedes enviar el client_id a tu backend o usarlo como necesites
+  });
+</script>
+
 </head>
 <body>
     <h1>Bienvenido a mi sitio de pruebas</h1>
